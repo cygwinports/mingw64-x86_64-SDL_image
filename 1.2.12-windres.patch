@@ -1,0 +1,16 @@
+--- origsrc/SDL_image-1.2.12/configure.in	2012-01-20 19:51:33.000000000 -0600
++++ src/SDL_image-1.2.12/configure.in	2013-11-24 14:40:28.718510600 -0600
+@@ -51,12 +51,7 @@ AC_PROG_OBJC
+ AC_C_INLINE
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+-if test -z "$host_alias"; then
+-    hostaliaswindres=
+-else
+-    hostaliaswindres="$host_alias-windres"
+-fi
+-AC_CHECK_PROGS(WINDRES, [windres $hostaliaswindres $host_os-windres])
++AC_CHECK_TOOL(WINDRES, windres)
+ 
+ case "$host" in
+     *-*-beos*)
